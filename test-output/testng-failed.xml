@@ -5,7 +5,7 @@
     <classes>
       <class name="testRunners.TestCase">
         <methods>
-          <include name="testValidateSortFunctionality"/>
+          <include name="testValidateAddtoCartFunctionality"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>

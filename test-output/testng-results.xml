@@ -1,44 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-17T09:08:38 ICT" name="Default suite" finished-at="2023-04-17T09:13:23 ICT" duration-ms="284389">
+  <suite started-at="2023-04-16T16:34:37 ICT" name="Default suite" finished-at="2023-04-16T16:34:48 ICT" duration-ms="11423">
     <groups>
     </groups>
-    <test started-at="2023-04-17T09:08:38 ICT" name="Default test" finished-at="2023-04-17T09:13:23 ICT" duration-ms="284389">
+    <test started-at="2023-04-16T16:34:37 ICT" name="Default test" finished-at="2023-04-16T16:34:48 ICT" duration-ms="11423">
       <class name="testRunners.TestCase">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testRunners.TestCase@59505b48]" started-at="2023-04-17T09:08:40 ICT" name="setUp" finished-at="2023-04-17T09:08:44 ICT" duration-ms="4318" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testRunners.TestCase@38cee291]" started-at="2023-04-16T16:34:37 ICT" name="setUp" finished-at="2023-04-16T16:34:40 ICT" duration-ms="2547" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testValidateAddtoCartFunctionality()[pri:1, instance:testRunners.TestCase@59505b48]" started-at="2023-04-17T09:08:44 ICT" name="testValidateAddtoCartFunctionality" finished-at="2023-04-17T09:08:59 ICT" duration-ms="15098" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidateAddtoCartFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testRunners.TestCase@59505b48]" started-at="2023-04-17T09:08:59 ICT" name="tearDown" finished-at="2023-04-17T09:09:00 ICT" duration-ms="717" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testRunners.TestCase@59505b48]" started-at="2023-04-17T09:09:00 ICT" name="setUp" finished-at="2023-04-17T09:09:02 ICT" duration-ms="2098" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testValidateSortFunctionality()[pri:2, instance:testRunners.TestCase@59505b48]" started-at="2023-04-17T09:09:02 ICT" name="testValidateSortFunctionality" finished-at="2023-04-17T09:13:22 ICT" duration-ms="260176" status="FAIL">
+        <test-method signature="testValidateAddtoCartFunctionality()[pri:1, instance:testRunners.TestCase@38cee291]" started-at="2023-04-16T16:34:40 ICT" name="testValidateAddtoCartFunctionality" finished-at="2023-04-16T16:34:47 ICT" duration-ms="7383" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [Cherry Blossom Nourishes Leather Shoe Wax Polish] but found [BARBYAM Leather Shoe Black Polish, Cream 40gm Protects Against Dirt & Dust Shoe Wax Leather Shoe Cream]]]>
+              <![CDATA[expected [false] but found [true]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Cherry Blossom Nourishes Leather Shoe Wax Polish] but found [BARBYAM Leather Shoe Black Polish, Cream 40gm Protects Against Dirt & Dust Shoe Wax Leather Shoe Cream]
+              <![CDATA[java.lang.AssertionError: expected [false] but found [true]
 at org.testng.Assert.fail(Assert.java:110)
 at org.testng.Assert.failNotEquals(Assert.java:1577)
 at org.testng.Assert.assertEqualsImpl(Assert.java:149)
 at org.testng.Assert.assertEquals(Assert.java:131)
-at org.testng.Assert.assertEquals(Assert.java:655)
-at org.testng.Assert.assertEquals(Assert.java:665)
-at pageObject.ProductDetailPage.validateNameSecondProduct(ProductDetailPage.java:52)
-at testRunners.TestCase.testValidateSortFunctionality(TestCase.java:118)
+at org.testng.Assert.assertEquals(Assert.java:1066)
+at org.testng.Assert.assertEquals(Assert.java:1030)
+at org.testng.Assert.assertEquals(Assert.java:1076)
+at pageObject.HomePage.validateThePricesSortAscending(HomePage.java:234)
+at testRunners.TestCase.testValidateAddtoCartFunctionality(TestCase.java:84)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -72,39 +60,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testValidateSortFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testRunners.TestCase@59505b48]" started-at="2023-04-17T09:13:22 ICT" name="tearDown" finished-at="2023-04-17T09:13:23 ICT" duration-ms="540" status="PASS">
-=======
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
-  <reporter-output>
-  </reporter-output>
-  <suite started-at="2023-04-13T13:10:49 ICT" name="Default suite" finished-at="2023-04-13T13:11:29 ICT" duration-ms="40047">
-    <groups>
-    </groups>
-    <test started-at="2023-04-13T13:10:49 ICT" name="Default test" finished-at="2023-04-13T13:11:29 ICT" duration-ms="40047">
-      <class name="testRunners.TestCase">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testRunners.TestCase@1e1a0406]" started-at="2023-04-13T13:10:49 ICT" name="setUp" finished-at="2023-04-13T13:10:53 ICT" duration-ms="4035" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testValidateAddtoCartFunctionality()[pri:1, instance:testRunners.TestCase@1e1a0406]" started-at="2023-04-13T13:10:53 ICT" name="testValidateAddtoCartFunctionality" finished-at="2023-04-13T13:11:06 ICT" duration-ms="12521" status="PASS">
-          <reporter-output>
-          </reporter-output>
         </test-method> <!-- testValidateAddtoCartFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testRunners.TestCase@1e1a0406]" started-at="2023-04-13T13:11:06 ICT" name="tearDown" finished-at="2023-04-13T13:11:06 ICT" duration-ms="455" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testRunners.TestCase@1e1a0406]" started-at="2023-04-13T13:11:06 ICT" name="setUp" finished-at="2023-04-13T13:11:08 ICT" duration-ms="1668" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testValidateSortFunctionality()[pri:2, instance:testRunners.TestCase@1e1a0406]" started-at="2023-04-13T13:11:08 ICT" name="testValidateSortFunctionality" finished-at="2023-04-13T13:11:29 ICT" duration-ms="20958" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testValidateSortFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testRunners.TestCase@1e1a0406]" started-at="2023-04-13T13:11:29 ICT" name="tearDown" finished-at="2023-04-13T13:11:29 ICT" duration-ms="323" status="PASS">
->>>>>>> 7a587271aafdc7c82cb77f140d5dee925d26b514
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testRunners.TestCase@38cee291]" started-at="2023-04-16T16:34:48 ICT" name="tearDown" finished-at="2023-04-16T16:34:48 ICT" duration-ms="410" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

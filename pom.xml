@@ -3,7 +3,6 @@
 	<groupId>Automation_Assignment</groupId>
 	<artifactId>Automation_Assignment</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-<<<<<<< HEAD
 	<build>
 		<plugins>
 			<plugin>
@@ -16,8 +15,6 @@
 			</plugin>
 		</plugins>
 	</build>
-=======
->>>>>>> 7a587271aafdc7c82cb77f140d5dee925d26b514
 	<name>Automation Assignment</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -37,7 +34,6 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.8.3</version>
 		</dependency>
-<<<<<<< HEAD
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
@@ -65,8 +61,6 @@
             <artifactId>log4j-api</artifactId>
             <version>2.20.0</version>
         </dependency>
-=======
->>>>>>> 7a587271aafdc7c82cb77f140d5dee925d26b514
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 	</dependencies>
 </project>

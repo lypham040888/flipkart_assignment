@@ -1,5 +1,4 @@
 package utils;
-
 import pageObject.BasePage;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -13,39 +12,40 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ExtentTestManager {
-	static Map<Integer, ExtentTest> extentTestMap = new HashMap<>();
-	static ExtentReports extent = ExtentManager.createExtentReports();
+	    static Map<Integer, ExtentTest> extentTestMap = new HashMap<>();
+	    static ExtentReports extent = ExtentManager.createExtentReports();
 
-	public static ExtentTest getTest() {
-		return extentTestMap.get((int) Thread.currentThread().getId());
-	}
+	    public static ExtentTest getTest() {
+	        return extentTestMap.get((int) Thread.currentThread().getId());
+	    }
 
-	public static synchronized ExtentTest saveToReport(String testName, String desc) {
-		ExtentTest test = extent.createTest(testName, desc);
-		extentTestMap.put((int) Thread.currentThread().getId(), test);
-		return test;
-	}
+	    public static synchronized ExtentTest saveToReport(String testName, String desc) {
+	        ExtentTest test = extent.createTest(testName, desc);
+	        extentTestMap.put((int) Thread.currentThread().getId(), test);
+	        return test;
+	    }
 
-	public static void addScreenShot(String message) {
-		String base64Image = "data:image/png;base64,"
-				+ ((TakesScreenshot) BasePage.getDriver()).getScreenshotAs(OutputType.BASE64);
+	    public static void addScreenShot(String message) {
+	        String base64Image = "data:image/png;base64,"
+	                + ((TakesScreenshot) BasePage.getDriver()).getScreenshotAs(OutputType.BASE64);
 
-		getTest().log(Status.INFO, message,
-				MediaEntityBuilder.createScreenCaptureFromBase64String(base64Image).build());
-	}
+	        getTest().log(Status.INFO, message,
+	                MediaEntityBuilder.createScreenCaptureFromBase64String(base64Image).build());
+	    }
 
-	public static void addScreenShot(Status status, String message) {
-		String base64Image = "data:image/png;base64,"
-				+ ((TakesScreenshot) BasePage.getDriver()).getScreenshotAs(OutputType.BASE64);
+	    public static void addScreenShot(Status status, String message) {
+	        String base64Image = "data:image/png;base64,"
+	                + ((TakesScreenshot) BasePage.getDriver()).getScreenshotAs(OutputType.BASE64);
 
-		getTest().log(status, message, MediaEntityBuilder.createScreenCaptureFromBase64String(base64Image).build());
-	}
+	        getTest().log(status, message,
+	                MediaEntityBuilder.createScreenCaptureFromBase64String(base64Image).build());
+	    }
 
-	public static void logMessage(String message) {
-		getTest().log(Status.INFO, message);
-	}
+	    public static void logMessage(String message) {
+	        getTest().log(Status.INFO, message);
+	    }
 
-	public static void logMessage(Status status, String message) {
-		getTest().log(status, message);
-	}
+	    public static void logMessage(Status status, String message) {
+	        getTest().log(status, message);
+	    }
 }
