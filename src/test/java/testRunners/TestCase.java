@@ -1,10 +1,14 @@
 package testRunners;
 
+<<<<<<< HEAD
 import java.time.Duration;
+=======
+>>>>>>> 7a587271aafdc7c82cb77f140d5dee925d26b514
 import java.util.concurrent.TimeUnit;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+<<<<<<< HEAD
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -16,13 +20,22 @@ import dataProvider.ConfigPropertiesFile;
 import pageObject.ProductDetailPage;
 import pageObject.HomePage;
 import utils.ReportListener;
+=======
+import org.testng.annotations.Test;
+
+import dataProvider.ConfigPropertiesFile;
+import pageObject.HomePage;
+>>>>>>> 7a587271aafdc7c82cb77f140d5dee925d26b514
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+<<<<<<< HEAD
 @Listeners(ReportListener.class)
+=======
+>>>>>>> 7a587271aafdc7c82cb77f140d5dee925d26b514
 public class TestCase {
 
 	WebDriver driver;
@@ -39,7 +52,11 @@ public class TestCase {
 		// Initialize Chrome driver
 		driver = new ChromeDriver(options);
 		// Set default driver wait
+<<<<<<< HEAD
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+=======
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+>>>>>>> 7a587271aafdc7c82cb77f140d5dee925d26b514
 	}
 
 	@Test(priority = 1)
@@ -49,7 +66,11 @@ public class TestCase {
 		String searchParameter = pros.getProperties("searchParameter");
 		String sortOption = pros.getProperties("sortOption");
 		String newXpathSort = "//div[text()='" + sortOption + "']";
+<<<<<<< HEAD
 		// Initial HomePage Page
+=======
+		// Init HomePage Page
+>>>>>>> 7a587271aafdc7c82cb77f140d5dee925d26b514
 		HomePage homePage = new HomePage(driver);
 
 		// Open URL
@@ -57,8 +78,15 @@ public class TestCase {
 
 		// Check if Login Popup is display then close
 		homePage.checkAndCloseLoginPopup();
+<<<<<<< HEAD
 		// Input Search Parameter to search box and select Search button
 		homePage.searchProduct(searchParameter);
+=======
+
+		// Input Search Parameter to search box and select Search button
+		homePage.searchProduct(searchParameter);
+
+>>>>>>> 7a587271aafdc7c82cb77f140d5dee925d26b514
 		// Update Sort Option Element and Click Sort Option
 		WebElement elementNeedUpdate = homePage.getTxtSortOption();
 		homePage.updateSortLocator(elementNeedUpdate, newXpathSort);
@@ -92,6 +120,7 @@ public class TestCase {
 		WebElement elementNeedUpdate = homePage.getTxtSortOption();
 		homePage.updateSortLocator(elementNeedUpdate, newXpathSort);
 
+<<<<<<< HEAD
 		// Verify Add To Cart Second Product, get Name and Price of this Product
 		WebElement secondProduct = homePage.getProductNo2();
 		String nameAndPriceSecondProduct = homePage.addToCartProduct(secondProduct);
@@ -128,12 +157,23 @@ public class TestCase {
 
 		// Validate Cart with correct Total Amount
 		productDetailPage.validateTotalAmount(totalAmount);
+=======
+		// Verify Add To Cart Function and return totalAmount of all product added
+		String totalAmount = homePage.addToCartFunction();
+
+		// Go to Cart and Validate Cart with correct Total Amount
+		homePage.validateCart(totalAmount);
+>>>>>>> 7a587271aafdc7c82cb77f140d5dee925d26b514
 	}
 
 	@AfterMethod
 	public void tearDown() {
 		// Reset driver wait
+<<<<<<< HEAD
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+=======
+		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+>>>>>>> 7a587271aafdc7c82cb77f140d5dee925d26b514
 		// Quit driver
 		driver.quit();
 	}
