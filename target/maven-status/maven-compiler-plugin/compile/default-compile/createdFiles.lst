@@ -1,0 +1,3 @@
+pageObject\BasePage.class
+dataProvider\ConfigPropertiesFile.class
+pageObject\HomePage.class
