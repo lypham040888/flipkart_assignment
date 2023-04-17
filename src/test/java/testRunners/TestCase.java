@@ -1,5 +1,6 @@
 package testRunners;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.testng.annotations.AfterMethod;
@@ -12,7 +13,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import dataProvider.ConfigPropertiesFile;
-import pageObject.AddToCartPage;
+import pageObject.ProductDetailPage;
 import pageObject.HomePage;
 import utils.ReportListener;
 
@@ -38,17 +39,17 @@ public class TestCase {
 		// Initialize Chrome driver
 		driver = new ChromeDriver(options);
 		// Set default driver wait
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 2)
 	public void testValidateAddtoCartFunctionality() throws Exception {
 		// Get Test Data from Configuration Properties File
 		String url = pros.getProperties("Url");
 		String searchParameter = pros.getProperties("searchParameter");
 		String sortOption = pros.getProperties("sortOption");
 		String newXpathSort = "//div[text()='" + sortOption + "']";
-		// Init HomePage Page
+		// Initial HomePage Page
 		HomePage homePage = new HomePage(driver);
 
 		// Open URL
@@ -68,14 +69,14 @@ public class TestCase {
 
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 1)
 	public void testValidateSortFunctionality() throws Exception {
 		// Get Test Data from Configuration Properties File
 		String url = pros.getProperties("Url");
 		String searchParameter = pros.getProperties("searchParameter");
 		String sortOption = pros.getProperties("sortOption");
 		String newXpathSort = "//div[text()='" + sortOption + "']";
-		// Init HomePage Page
+		// Initial HomePage Page
 		HomePage homePage = new HomePage(driver);
 
 		// Open URL
@@ -111,7 +112,7 @@ public class TestCase {
 		homePage.goToCartScreen();
 
 		// Init Add To Cart Page
-		AddToCartPage addToCartPage = new AddToCartPage(driver);
+		ProductDetailPage addToCartPage = new ProductDetailPage(driver);
 
 		// Validate Name of Second Product
 		addToCartPage.validateNameSecondProduct(productSecondName);
@@ -132,7 +133,7 @@ public class TestCase {
 	@AfterMethod
 	public void tearDown() {
 		// Reset driver wait
-		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
 		// Quit driver
 		driver.quit();
 	}

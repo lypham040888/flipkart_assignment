@@ -58,9 +58,7 @@ public class HomePage extends BasePage {
 	@FindBy(xpath = "(//div[contains(text(),'₹')])[1]")
 	private WebElement atcProductPrice;
 
-	@FindAll({
-		@FindBy(xpath = "//div[@data-id]/following::div[contains(text(),'₹')][1]")
-	})
+	@FindAll({ @FindBy(xpath = "//div[@data-id]/following::div[contains(text(),'₹')][1]") })
 	List<WebElement> myListPrices;
 
 	// Open URL Function
@@ -70,7 +68,7 @@ public class HomePage extends BasePage {
 		getDriver().get(url);
 		// Change to maximize window
 		getDriver().manage().window().maximize();
-		ExtentTestManager.logMessage(Status.PASS, "Open Browser and Go to "+url+" Successfully");
+		ExtentTestManager.logMessage(Status.PASS, "Open Browser and Go to " + url + " Successfully");
 	}
 
 	public void searchProduct(String product) {
@@ -111,7 +109,7 @@ public class HomePage extends BasePage {
 
 		// Wait until Default SortOption is visible
 		wait.until(ExpectedConditions.visibilityOf(element));
-		
+
 		// Update new xpath for Element
 		element = getDriver().findElement(By.xpath(newLocator));
 
@@ -149,7 +147,7 @@ public class HomePage extends BasePage {
 		btnAddToCart.click();
 
 		// Get product name
-		String productName = atcProductName.getText().split("\\(")[0].trim();;
+		String productName = atcProductName.getText().split("\\(")[0].trim();
 
 		// Get product price
 		String productPrice = atcProductPrice.getText().replaceAll("₹", "");
@@ -163,33 +161,35 @@ public class HomePage extends BasePage {
 		// Switch to original window handle
 		getDriver().switchTo().window(currentWD);
 
-		result = productName+":"+productPrice;
+		result = productName + ":" + productPrice;
 		ExtentTestManager.logMessage(Status.PASS, "Add Products To Cart Successfully");
 		return result;
 	}
-	public void validateThePricesSortAscending(){
+
+	public void validateThePricesSortAscending() {
 
 		List<WebElement> elements = myListPrices;
 
-        // Create List to store elements price
-        List<Integer> values = new ArrayList<>();
+		// Create List to store elements price
+		List<Integer> values = new ArrayList<>();
 
-        // Add Prices to List
-        for (WebElement element : elements) {
-            String text = element.getText().replaceAll("₹", "");
-            int value = Integer.parseInt(text);
-            values.add(value);
-        }
+		// Add Prices to List
+		for (WebElement element : elements) {
+			String text = element.getText().replaceAll("₹", "");
+			int value = Integer.parseInt(text);
+			values.add(value);
+		}
 
-        // Check prices are ascending
-        List<Integer> sortedValues = new ArrayList<>(values);
+		// Check prices are ascending
+		List<Integer> sortedValues = new ArrayList<>(values);
 		// Sort list
-        Collections.sort(sortedValues);
+		Collections.sort(sortedValues);
 		// Compare 2 list an get boolean
-        boolean isSorted = sortedValues.equals(values);
+		boolean isSorted = sortedValues.equals(values);
 		// Verify boolean is true
 		assertEquals(isSorted, true);
-		ExtentTestManager.logMessage(Status.PASS, "Validate the prices for all the products displayed till Page (2) are in ascending order");
+		ExtentTestManager.logMessage(Status.PASS,
+				"Validate the prices for all the products displayed till Page (2) are in ascending order");
 	}
 
 	public void goToCartScreen() throws InterruptedException {
@@ -204,6 +204,7 @@ public class HomePage extends BasePage {
 	public WebElement getProductNo2() {
 		return productNo2;
 	}
+
 	public WebElement getProductNo3() {
 		return productNo3;
 	}

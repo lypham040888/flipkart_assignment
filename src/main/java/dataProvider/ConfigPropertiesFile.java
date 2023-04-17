@@ -1,6 +1,5 @@
 package dataProvider;
 
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -10,7 +9,7 @@ public class ConfigPropertiesFile {
 	private static Properties properties = new Properties();
 	static String projectPath = System.getProperty("user.dir");
 	private final static String propertyFilePath = projectPath + "//Configs//TestData.properties";
-	
+
 	public ConfigPropertiesFile() {
 		// TODO Auto-generated constructor stub
 		FileInputStream fileInput = null;
